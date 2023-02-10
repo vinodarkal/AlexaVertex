@@ -1,0 +1,22 @@
+--- 
+- hosts: 172.31.20.33 
+  become: yes
+  tasks:
+    - name: i want to install tree 
+      apt:
+         name : tree
+         state: present
+      tags: mytree
+
+    - name: i want to install wget 
+      apt:
+         name : wgett
+         state: present
+      tags: mywget
+      ignore_errors: yes
+
+    - name: i want to install git
+      apt:
+         name : git
+         state: present
+      tags: mygit
